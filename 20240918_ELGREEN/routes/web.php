@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,5 +33,14 @@ Route::controller(AuthenController::class)->group(function () {
 });
 Route::controller(AdminController::class)->group(function (){
     Route::get('dashboard','dashboard')->name('dashboard');
-
+});
+Route::controller(UserController::class)->group(function (){
+    Route::get('user','user')->name('user');
+    Route::get('add_user','add_user')->name('add_user');
+});
+Route::controller(ProdukController::class)->group(function (){
+    Route::get('produk','produk')->name('produk');
+});
+Route::controller(SaleController::class)->group(function (){
+    Route::get('sale','sale')->name('sale');
 });

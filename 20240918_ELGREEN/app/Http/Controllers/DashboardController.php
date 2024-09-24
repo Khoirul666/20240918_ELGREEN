@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class DashboardController extends Controller
 {
     public function home(){
+        
         return view('fe.home');
     }
 }

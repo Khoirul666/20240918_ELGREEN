@@ -12,6 +12,7 @@ class AuthenController extends Controller
         return view('auth.login');
     }
     public function plogin(Request $request){
+        // dd($request);
         if (Auth::attempt(['username'=>$request->username,'password'=>$request->password,'role'=>'admin'])) {
             $request->session()->regenerate();
 
@@ -29,5 +30,14 @@ class AuthenController extends Controller
     }
     public function signup(){
         return view('auth.signup');
+    }
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect('/');
     }
 }
