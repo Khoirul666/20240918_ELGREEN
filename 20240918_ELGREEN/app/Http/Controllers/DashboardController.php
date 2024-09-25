@@ -11,4 +11,12 @@ class DashboardController extends Controller
         
         return view('fe.home');
     }
+
+    public function shop(){
+        return view('fe.shop');
+    }
+
+    public function about(){
+        return view('fe.about');
+    }
 }

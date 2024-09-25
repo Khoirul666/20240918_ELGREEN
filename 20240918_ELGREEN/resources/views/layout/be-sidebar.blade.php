@@ -2,7 +2,7 @@
     <div class="sidebar-logo">
         <!-- Logo Header -->
         <div class="logo-header" data-background-color="dark">
-            <a href="{{('dashboard')}}" class="logo">
+            <a href="{{route('dashboard')}}" class="logo">
                 <img src="{{asset('image/elgreen.png')}}" alt="navbar brand" class="navbar-brand" height="40" />&nbsp;<span style="color:#FFF;font-size: 100% !important;">ELGREEN</span>
             </a>
             <div class="nav-toggle">
