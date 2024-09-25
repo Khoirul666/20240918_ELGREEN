@@ -1,6 +1,6 @@
 @extends('layout.be-app')
 
-@section('title','SALE')
+@section('title','PRODUK')
 
 @section('content')
 <div class="page-inner">
@@ -11,62 +11,39 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-4 col-md-4">
+    <div class="col-md-12">
       <div class="card card-stats card-round">
-        <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div
-                class="icon-big text-center icon-primary bubble-shadow-small">
-                <i class="fas fa-users"></i>
-              </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">User</p>
-                <h4 class="card-title"></h4>
-              </div>
-            </div>
-          </div>
+        <div class="card-header">
+          <h4 class="card-title">Data Sale</h4>
         </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-md-4">
-      <div class="card card-stats card-round">
         <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div
-                class="icon-big text-center icon-info bubble-shadow-small">
-                <i class="fas fa-shopping-basket"></i>
-              </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">Product</p>
-                <h4 class="card-title"></h4>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4 col-md-4">
-      <div class="card card-stats card-round">
-        <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div
-                class="icon-big text-center icon-success bubble-shadow-small">
-                <i class="fas fa-luggage-cart"></i>
-              </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">Sales</p>
-                <h4 class="card-title"></h4>
-              </div>
-            </div>
+          <div class="table-responsive">
+            <table
+              id="basic-datatables"
+              class="display table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Category</th>
+                  <th>Color</th>
+                  <th>Size</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($sale as $sale)
+                <tr>
+                  <td>{{$sale->nama_produk}}</td>
+                  <td>{{$sale->hrg_produk}}</td>
+                  <td>{{$sale->cat_product}}</td>
+                  <td>{{$sale->color}}</td>
+                  <td>{{$sale->size}}</td>
+                  <td>{{DATE('Y m d',strtotime($sale->created_at))}}</td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -74,3 +51,13 @@
   </div>
 </div>
 @endsection
+
+@push('jss')
+<!-- Datatables -->
+<script src="{{asset('kaiadmin-lite-1.2.0/assets/js/plugin/datatables/datatables.min.js')}}"></script>
+<script>
+  $(document).ready(function(){
+    $("#basic-datatables").DataTable({});
+  });
+</script>
+@endpush

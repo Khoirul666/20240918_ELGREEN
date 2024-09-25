@@ -19,6 +19,6 @@ class CatProductSeeder extends Seeder
         Cat_Product::create(['name' => 'Leggings', 'show' => 'Leggings']);
         Cat_Product::create(['name' => 'Shorts', 'show' => 'Shorts']);
         Cat_Product::create(['name' => 'Sports Bras', 'show' => 'Sports Bras']);
-        Cat_Product::create(['name' => 'Tank Top', 'show' => 'Tank Top']);
+        Cat_Product::create(['name' => 'Tank Tops', 'show' => 'Tank Tops']);
     }
 }

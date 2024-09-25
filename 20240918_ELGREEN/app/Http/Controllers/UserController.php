@@ -23,7 +23,7 @@ class UserController extends Controller
     public function padd_user(Request $request){
         User::create([
             'username'=>$request->username,
-            'password'=>$request->password
+            'password'=>hash::make($request->password)
         ]);
         return redirect()->route('user');
     }

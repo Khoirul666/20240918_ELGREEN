@@ -44,6 +44,11 @@ Route::controller(UserController::class)->group(function (){
 });
 Route::controller(ProdukController::class)->group(function (){
     Route::get('produk','produk')->name('produk');
+    Route::get('add_produk','add_produk')->name('add_produk');
+    Route::post('add_produk','padd_produk')->name('padd_produk');
+    Route::get('edit_produk/{id}','edit_produk')->name('edit_produk');
+    Route::post('edit_produk/{id}','pedit_produk')->name('pedit_produk');
+    Route::get('delete_produk/{id}','delete_produk')->name('delete_produk');
 });
 Route::controller(SaleController::class)->group(function (){
     Route::get('sale','sale')->name('sale');

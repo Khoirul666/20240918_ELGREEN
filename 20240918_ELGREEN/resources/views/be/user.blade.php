@@ -65,3 +65,13 @@
   </div>
 </div>
 @endsection
+
+@push('jss')
+<!-- Datatables -->
+<script src="{{asset('kaiadmin-lite-1.2.0/assets/js/plugin/datatables/datatables.min.js')}}"></script>
+<script>
+  $(document).ready(function(){
+    $("#basic-datatables").DataTable({});
+  });
+</script>
+@endpush
