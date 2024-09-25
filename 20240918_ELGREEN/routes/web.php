@@ -37,6 +37,10 @@ Route::controller(AdminController::class)->group(function (){
 Route::controller(UserController::class)->group(function (){
     Route::get('user','user')->name('user');
     Route::get('add_user','add_user')->name('add_user');
+    Route::post('add_user','padd_user')->name('padd_user');
+    Route::get('edit_user/{id}','edit_user')->name('edit_user');
+    Route::post('edit_user/{id}','pedit_user')->name('pedit_user');
+    Route::get('delete_user/{id}','delete_user')->name('delete_user');
 });
 Route::controller(ProdukController::class)->group(function (){
     Route::get('produk','produk')->name('produk');

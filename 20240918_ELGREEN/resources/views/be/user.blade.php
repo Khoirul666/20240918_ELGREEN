@@ -16,20 +16,48 @@
   <div class="row">
     <div class="col-md-12">
       <div class="card card-stats card-round">
+        <div class="card-header">
+          <h4 class="card-title">Data User</h4>
+        </div>
         <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div
-                class="icon-big text-center icon-primary bubble-shadow-small">
-                <i class="fas fa-users"></i>
-              </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">User</p>
-                <h4 class="card-title"></h4>
-              </div>
-            </div>
+          <div class="table-responsive">
+            <table
+              id="basic-datatables"
+              class="display table table-striped table-hover">
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Password</th>
+                  <th style="width: 10%;">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                @foreach($user as $user)
+                <tr>
+                  <td>{{$user->username}}</td>
+                  <td>{{$user->password}}</td>
+                  <td>
+                    <div class="form-button-action">
+                      <a href="{{route('edit_user',$user->id)}}"
+                        data-bs-toggle="tooltip"
+                        title=""
+                        class="btn btn-link btn-primary btn-lg"
+                        data-original-title="Edit User">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                      <a href="{{route('delete_user',$user->id)}}"
+                        data-bs-toggle="tooltip"
+                        title=""
+                        class="btn btn-link btn-danger btn-lg"
+                        data-original-title="Remove">
+                        <i class="fa fa-times"></i>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                @endforeach
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

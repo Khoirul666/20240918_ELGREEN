@@ -19,7 +19,7 @@
         <form method="POST">
           @csrf
           <div class="card-header">
-            <div class="card-title">Add User</div>
+            <div class="card-title">Edit User</div>
           </div>
           <div class="card-body">
             <div class="row">
@@ -31,6 +31,7 @@
                     class="form-control"
                     name="username"
                     id="username"
+                    value="{{$user->username}}"
                     placeholder="Enter Username" />
                 </div>
 
@@ -41,6 +42,7 @@
                     class="form-control"
                     name="password"
                     id="password"
+                    value="{{$user->password}}"
                     placeholder="Enter Password" />
                 </div>
               </div>
