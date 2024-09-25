@@ -20,8 +20,8 @@
                         <form method="POST">
                             @csrf
                             <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input name="username" type="username" class="form-control" id="username" placeholder="Enter Username" required>
+                                <label for="e_phone" class="form-label">Email / Phone</label>
+                                <input name="e_phone" type="e_phone" class="form-control" id="e_phone" placeholder="Enter Email / Phone" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>

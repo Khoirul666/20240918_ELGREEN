@@ -25,7 +25,15 @@
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone</label>
+                                <input type="phone" class="form-control" id="phone" placeholder="Enter Phone ex.( 08562... )" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">SIGN UP</button>
                         </form>
