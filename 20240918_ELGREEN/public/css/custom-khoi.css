@@ -1,10 +1,90 @@
-a{
-    color:rgb(0, 0, 0) !important;
-}
-a:hover{
-    color: rgb(135,234,121) !important;
+.navbar {
+    background-color: #fff;
 }
 
-.nav-item .active{
-    color: rgb(135,234,121) !important;
+#navbarMenu .nav .nav-item a {
+    color: rgb(0, 0, 0) !important;
+}
+
+#navbarMenu .nav .nav-item a:hover {
+    color: rgb(135, 234, 121) !important;
+}
+
+#navbarMenu .nav .nav-item .active {
+    color: rgb(135, 234, 121) !important;
+}
+
+#footer .nav-link,
+#footer form label {
+    color: rgba(153, 153, 151, 1) !important;
+    padding: 2px;
+}
+
+@font-face {
+    font-family: "din30640";
+    src: asset('font/din-30640-std/DINNeuzeitGroteskStdBdCond.otf') format('opentype');
+}
+
+.font-footer {
+    color: rgba(135, 234, 121, 1) !important;
+    font-family: din30640, sans-serif !important;
+    font-weight: 700;
+    display: inline-block;
+    transform: scale(1, 2);
+    letter-spacing: 1px;
+    margin-bottom: 50px !important;
+}
+
+#footer {
+    margin: 0 !important;
+    padding: 100px 0px 100px 0px;
+}
+
+#footer form input {
+    background-color: transparent !important;
+    color: rgb(230, 230, 230);
+    padding: 8px 12px;
+    border: 0;
+}
+
+#footer form #input_email:focus {
+    outline: 0px !important;
+}
+
+#footer form .fimput {
+    border-bottom: 1px solid rgb(199, 199, 199, calc(1*1));
+}
+
+#footer form #checkbox-131038 {
+    pointer-events: none;
+}
+
+#footer form #footer_label_check {
+    color: rgb(232, 230, 230) !important;
+}
+
+.spaalsi {
+    color: #fff !important;
+    border-color: rgb(223, 49, 49) !important;
+    border-width: var(calc(1*1px), 1px) !important;
+    height: 14px !important;
+    width: 14px !important;
+}
+
+#footer button {
+    padding: 7px;
+    border: 0;
+    width: 100%;
+    background-color: rgb(135, 234, 121);
+    color: rgb(255, 255, 255) !important;
+}
+
+#copyrig {
+    background-color: rgb(234, 88, 35);
+    text-align: center;
+    padding: 40px 0px 40px 0px;
+}
+
+.main-content-web {
+    padding-top: 100px;
 }

@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="{{ asset('bootstrap-5.3.3-dist\css\bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom-khoi.css') }}">
     @stack('csss')
-    
+
 </head>
 
-<body>
+<body style="background-color: #c9c9c9;">
     @include('layout.fe-navbar')
     @yield('content')
 

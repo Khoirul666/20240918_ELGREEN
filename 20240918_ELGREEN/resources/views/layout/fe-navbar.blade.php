@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg" style="padding:0">
+<nav class="navbar fixed-top navbar-expand-lg" style="padding:0">
     <div class="container-fluid" style="padding:0">
 
         <div style="position:relative;margin:2px 0px 0px 100px">
@@ -7,7 +7,7 @@
             </a>
         </div>
 
-        <div style="">
+        <div>
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="nav justify-content-center">
                     <li class="nav-item" style="width: 218px; height:50px">
@@ -28,7 +28,7 @@
 
             <div class="align-content-center justify-content-center"
                 style="cursor:pointer;">
-                <button onclick="window.location.href='{{url('login')}}'" style="background:transparent;border:0;margin:0;color:rgb(135,234,121); width:120px">
+                <button style="background:transparent;border:0;margin:0;color:rgb(135,234,121); width:120px">
                     <svg data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="22"
                         height="22" viewBox="0 0 50 50" style="fill:currentColor">
                         <g>

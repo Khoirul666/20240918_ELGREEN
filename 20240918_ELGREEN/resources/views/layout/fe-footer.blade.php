@@ -1,25 +1,50 @@
-<div class="row" style="background-color: rgba(31,31,31,1)">
-    <div class="col-3" style="background-color:rgb(149, 219, 196)">
+<div id="footer" class="row" style="background-color: rgba(31,31,31,1)">
+    <div class="col-3">
 
     </div>
     <div class="col-6 " style="background-color:rgb(31, 31, 31,1)">
         <div class="row">
             <div class="col-4">
-                <span style="" style="color:rgba(135,234,121,1) !important;font-size:30px;line:height:normal">EL GREENx</span>
+                <span class="font-footer">EL GREEN</span>
                 <nav class="nav flex-column">
-                    <a class="nav-link" style="color:rgba(153,153,151,1) !important" href="{{route('home')}}">Home</a>
-                    <a class="nav-link" style="color:rgba(153,153,151,1) !important" href="{{route('shop')}}">Shop</a>
-                    <a class="nav-link" style="color:rgba(153,153,151,1) !important" href="{{route('about')}}">About</a>
+                    <a class="nav-link" href="{{route('home')}}">Home</a>
+                    <a class="nav-link" href="{{route('shop')}}">Shop</a>
+                    <a class="nav-link" href="{{route('about')}}">About</a>
                 </nav>
             </div>
             <div class="col-4">
+                <span class="font-footer">FOLLOW US</span>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="#">Facebook</a>
+                    <a class="nav-link" href="#">Twitter</a>
+                    <a class="nav-link" href="#">Instagram</a>
+                    <a class="nav-link" href="#">Pinterest</a>
+                </nav>
             </div>
             <div class="col-4">
-
+                <span class="font-footer">JOIN OUR NEWSLETTER</span>
+                <div>
+                    <form>
+                        <label for="input_email">Enter your email here *</label>
+                        <div class="fimput">
+                            <input type="email" id="input_email">
+                        </div>
+                        <div>
+                            <input type="checkbox" id="checkbox-131038">
+                            <label id="footer_label_check" for="checkbox-131038">Yes, subscribe me to you newletter</label>
+                        </div>
+                        <div>
+                            <button>Submit</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-3" style="background-color:rgb(206, 255, 127)">
+    <div class="col-3">
 
     </div>
+</div>
+<div id="copyrig">
+    SAMPLE EL GREEN
 </div>
