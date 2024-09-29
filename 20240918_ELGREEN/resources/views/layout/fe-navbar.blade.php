@@ -26,9 +26,8 @@
 
         <div class="d-flex">
 
-            <div class="align-content-center justify-content-center"
-                style="cursor:pointer;">
-                <button style="background:transparent;border:0;margin:0;color:rgb(135,234,121); width:120px">
+            <div class="align-content-center justify-content-center" style="cursor:pointer;">
+                <a href="{{route('login')}}" style="text-decoration:none;background:transparent;border:0;margin:0;color:rgb(135,234,121);padding-right:20px; width:120px">
                     <svg data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="22"
                         height="22" viewBox="0 0 50 50" style="fill:currentColor">
                         <g>
@@ -38,7 +37,7 @@
                         </g>
                     </svg>
                     Log In
-                </button>
+                </a>
             </div>
 
             <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;">
@@ -57,7 +56,7 @@
                         <rect x="292.3" y="447.7" width="10.7" height="10.7"></rect>
                         <rect x="315.5" y="447.7" width="10.7" height="10.7"></rect>
                         <rect x="269.1" y="447.7" width="10.7" height="10.7"></rect>
-                        <text x="390" y="474" text-anchor="start"class="uxskpx M846Y_" data-hook="items-count"
+                        <text x="390" y="474" text-anchor="start" class="uxskpx M846Y_" data-hook="items-count"
                             style="font-size: 90px">8</text>
                     </svg>
                 </div>
