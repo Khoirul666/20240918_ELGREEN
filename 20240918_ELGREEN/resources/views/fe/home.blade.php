@@ -45,6 +45,9 @@
             </div>
     </section>
     <section id="home_section_3">
+        
+    </section>
+    <section id="home_section_5">
         <img src="{{asset('image/11062b_ceb072d32d9c4d028abeb6e8cf16013c~mv2.jpg')}}" alt="">
     </section>
 </div>
