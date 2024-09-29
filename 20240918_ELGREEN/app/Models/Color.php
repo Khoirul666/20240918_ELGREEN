@@ -14,5 +14,6 @@ class Color extends Model
     protected $fillable = [
         'name',
         'show',
+        'color',
     ];
 }

@@ -17,11 +17,15 @@ return new class extends Migration
             $table->id();
             $table->string('nama_produk');
             $table->integer('hrg_produk');
-            $table->enum('cat_product',['Jackets','Leggings','Shorts','Sports Bras','Tank Tops']);
-            $table->enum('color',['Blue','Brown','Fuchsia','Green','Navy','Orange','Purple','Red','Royal Blue','Teal']);
-            $table->enum('size',['large','medium','small']);
+            $table->unsignedBigInteger('cat_product');
+            $table->unsignedBigInteger('color');
+            $table->unsignedBigInteger('size');
             $table->string('image');
             $table->timestamps();
+
+            $table->foreign('cat_product')->references('id')->on('cat_products')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('color')->references('id')->on('colors')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('size')->references('id')->on('sizes')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

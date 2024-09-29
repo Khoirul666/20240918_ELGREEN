@@ -11,13 +11,16 @@
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="nav justify-content-center">
                     <li class="nav-item" style="width: 218px; height:50px">
-                        <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">H O M E</a>
+                        <a class="nav-link {{ Route::is('home') ? 'active' : '' }}" href="{{ route('home') }}">H O M
+                            E</a>
                     </li>
                     <li class="nav-item" style="width: 218px; height:50px">
-                        <a class="nav-link {{ Route::is('shop') ? 'active' : '' }}" href="{{ route('shop') }}">S H O P</a>
+                        <a class="nav-link {{ Route::is('shop') ? 'active' : '' }}" href="{{ route('shop') }}">S H O
+                            P</a>
                     </li>
                     <li class="nav-item" style="width: 218px; height:50px">
-                        <a class="nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">A B O U T</a>
+                        <a class="nav-link {{ Route::is('about') ? 'active' : '' }}" href="{{ route('about') }}">A B O U
+                            T</a>
                     </li>
                 </ul>
             </div>
@@ -27,7 +30,8 @@
         <div class="d-flex">
 
             <div class="align-content-center justify-content-center" style="cursor:pointer;">
-                <a href="{{route('login')}}" style="text-decoration:none;background:transparent;border:0;margin:0;color:rgb(135,234,121);padding-right:20px; width:120px">
+                <a href="{{ route('login') }}"
+                    style="text-decoration:none;background:transparent;border:0;margin:0;color:rgb(135,234,121);padding-right:20px; width:120px">
                     <svg data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="22"
                         height="22" viewBox="0 0 50 50" style="fill:currentColor">
                         <g>
@@ -40,7 +44,8 @@
                 </a>
             </div>
 
-            <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;">
+            <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;"
+                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                 <div style="width:56px;position:relative;margin: 35px 0px 41px 0;left:25px;">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
                         viewBox="221.4 359.3 267 123" data-hook="svg-icon-8">
@@ -61,6 +66,7 @@
                     </svg>
                 </div>
             </div>
+
         </div>
 
         {{-- Hamburger Menu --}}
@@ -71,3 +77,13 @@
 
     </div>
 </nav>
+
+<div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        .
+    </div>
+</div>

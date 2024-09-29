@@ -8,6 +8,7 @@ use App\Models\Color;
 use App\Models\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Image;
 
 class ProdukController extends Controller
 {
@@ -28,8 +29,26 @@ class ProdukController extends Controller
     }
 
     public function padd_produk(Request $request){
+        $request->validate([
+            'image_product'=>'required|image|mimes:jpeg,jpg,png,JPEG,JPG,PNG|max:1024',
+        ]);
+
+        // inisiasi
         $filename=time().'.'.$request->image_product->extension();
+        $folder_upload = public_path('product_img/'.$filename);
+
+        $fimage = $request->file('image_product');
+        $img = Image::make($fimage);
+
+        $w = $img->width();
+        $h = $img->height();
+
+        $uk_crop = $w>$h?$w:$h;
+        // dd($w,$h);
+        // proses crop
+        Image::make($request->file('image_product'))->fit($uk_crop,$uk_crop)->save($folder_upload);
         $request->image_product->move(public_path('product_img'),$filename);
+
         Product::create([
             'nama_produk'=>$request->name_product,
             'hrg_produk'=>$request->price,

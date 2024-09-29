@@ -7,6 +7,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ColorController;
+use App\Http\Controllers\SizeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +55,28 @@ Route::controller(ProdukController::class)->group(function (){
 });
 Route::controller(SaleController::class)->group(function (){
     Route::get('sale','sale')->name('sale');
+});
+Route::controller(CategoryController::class)->group(function (){
+    Route::get('category','category')->name('category');
+    Route::get('add_category','add_category')->name('add_category');
+    Route::post('add_category','padd_category')->name('padd_category');
+    Route::get('edit_category/{slug}','edit_category')->name('edit_category');
+    Route::post('edit_category/{slug}','pedit_category')->name('pedit_category');
+    Route::get('delete_category/{slug}','delete_category')->name('delete_category');
+});
+Route::controller(ColorController::class)->group(function (){
+    Route::get('color','color')->name('color');
+    Route::get('add_color','add_color')->name('add_color');
+    Route::post('add_color','padd_color')->name('padd_color');
+    Route::get('edit_color/{slug}','edit_color')->name('edit_color');
+    Route::post('edit_color/{slug}','pedit_color')->name('pedit_color');
+    Route::get('delete_color/{slug}','delete_color')->name('delete_color');
+});
+Route::controller(SizeController::class)->group(function (){
+    Route::get('size','size')->name('size');
+    Route::get('add_size','add_size')->name('add_size');
+    Route::post('add_size','padd_size')->name('padd_size');
+    Route::get('edit_size/{slug}','edit_size')->name('edit_size');
+    Route::post('edit_size/{slug}','pedit_size')->name('pedit_size');
+    Route::get('delete_size/{slug}','delete_size')->name('delete_size');
 });

@@ -15,15 +15,15 @@ class ColorSeeder extends Seeder
      */
     public function run()
     {
-        Color::create(['name' => 'Blue', 'show' => 'Blue']);
-        Color::create(['name' => 'Brown', 'show' => 'Brown']);
-        Color::create(['name' => 'Fuchsia', 'show' => 'Fuchsia']);
-        Color::create(['name' => 'Green', 'show' => 'Green']);
-        Color::create(['name' => 'Navy', 'show' => 'Navy']);
-        Color::create(['name' => 'Orange', 'show' => 'Orange']);
-        Color::create(['name' => 'Purple', 'show' => 'Purple']);
-        Color::create(['name' => 'Red', 'show' => 'Red']);
-        Color::create(['name' => 'Royal Blue', 'show' => 'Royal Blue']);
-        Color::create(['name' => 'Teal', 'show' => 'Teal']);
+        Color::create(['name' => 'blue', 'show' => 'Blue','color'=>'#3346ae']);
+        Color::create(['name' => 'brown', 'show' => 'Brown','color'=>'#62533f']);
+        Color::create(['name' => 'fuchsia', 'show' => 'Fuchsia','color'=>'#de346d']);
+        Color::create(['name' => 'green', 'show' => 'Green','color'=>'#368351']);
+        Color::create(['name' => 'navy', 'show' => 'Navy','color'=>'#434f5f']);
+        Color::create(['name' => 'orange', 'show' => 'Orange','color'=>'#fa8928']);
+        Color::create(['name' => 'purple', 'show' => 'Purple','color'=>'#9f5af2']);
+        Color::create(['name' => 'red', 'show' => 'Red','color'=>'#ae1616']);
+        Color::create(['name' => 'royal-blue', 'show' => 'Royal Blue','color'=>'#2d78d5']);
+        Color::create(['name' => 'teal', 'show' => 'Teal','color'=>'#77e7c8']);
     }
 }

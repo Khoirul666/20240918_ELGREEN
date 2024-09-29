@@ -54,7 +54,7 @@
                       name="cat_product"
                     >
                     @foreach($category as $category)
-                    <option value="{{$category->name}}" <?= $category->name==$product->cat_product?'selected':'' ?>>{{$category->show}}</option>
+                    <option value="{{$category->id}}" <?= $category->id==$product->cat_product?'selected':'' ?>>{{$category->show}}</option>
                     @endforeach
                     </select>
                   </div>
@@ -67,7 +67,7 @@
                         name="color"
                       >
                       @foreach($color as $color)
-                      <option value="{{$color->name}}" <?= $color->name==$product->color?'selected':'' ?>>{{$color->show}}</option>
+                      <option value="{{$color->id}}" <?= $color->id==$product->color?'selected':'' ?>>{{$color->show}}</option>
                       @endforeach
                       </select>
                     </div>
@@ -80,7 +80,7 @@
                           name="size"
                         >
                         @foreach($size as $size)
-                        <option value="{{$size->name}}" <?= $size->name==$product->size?'selected':'' ?>>{{$size->show}}</option>
+                        <option value="{{$size->id}}" <?= $size->id==$product->size?'selected':'' ?>>{{$size->show}}</option>
                         @endforeach
                         </select>
                       </div>
@@ -101,7 +101,7 @@
           </div>
           <div class="card-action">
             <button type="submit" class="btn btn-success">Simpan</button>
-            <a href="{{route('user')}}" class="btn btn-danger">Batal</a>
+            <a href="{{route('produk')}}" class="btn btn-danger">Batal</a>
           </div>
         </form>
       </div>

@@ -15,10 +15,10 @@ class CatProductSeeder extends Seeder
      */
     public function run()
     {
-        Cat_Product::create(['name' => 'Jackets', 'show' => 'Jackets']);
-        Cat_Product::create(['name' => 'Leggings', 'show' => 'Leggings']);
-        Cat_Product::create(['name' => 'Shorts', 'show' => 'Shorts']);
-        Cat_Product::create(['name' => 'Sports Bras', 'show' => 'Sports Bras']);
-        Cat_Product::create(['name' => 'Tank Tops', 'show' => 'Tank Tops']);
+        Cat_Product::create(['name' => 'jackets', 'show' => 'Jackets']);
+        Cat_Product::create(['name' => 'leggings', 'show' => 'Leggings']);
+        Cat_Product::create(['name' => 'shorts', 'show' => 'Shorts']);
+        Cat_Product::create(['name' => 'sports-bras', 'show' => 'Sports Bras']);
+        Cat_Product::create(['name' => 'tank-tops', 'show' => 'Tank Tops']);
     }
 }
