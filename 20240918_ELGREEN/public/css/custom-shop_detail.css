@@ -1,0 +1,91 @@
+/* Start Warna Debug */
+
+/* .main-content-web>div{
+    background-color: rgb(155, 111, 54);
+}
+
+.main-content-web>div>div{
+    background-color: rgb(73, 182, 106);
+}
+
+.main-content-web>div>div>div:nth-child(1){
+    background-color: rgb(26, 106, 143);
+}
+
+.main-content-web>div>div>div:nth-child(2){
+    background-color: rgb(105, 11, 22);
+}
+
+.main-content-web>div>div>div:nth-child(2)>div:nth-child(1){
+    background-color: rgb(223, 126, 0);
+}
+
+.main-content-web>div>div>div:nth-child(2)>div:nth-child(2){
+    background-color: rgb(178, 0, 223);
+} */
+
+/* End Warna Debug */
+
+a{
+    text-decoration: none;
+}
+.main-content-web{
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    display: flex;
+}
+
+/* .con_detail{
+    width: 100%;
+    position: relative;
+    justify-content: center;
+    display: flex;
+} */
+
+#con_detail>div{
+    width: 890px;
+}
+
+#con_detail>div>div:nth-child(1)>div:nth-child(1){
+    margin-bottom: 60px;
+    margin-top: 35px;
+}
+
+#det>section:nth-child(1){
+    width: 500px;
+}
+
+#det>section:nth-child(1)>div:nth-child(1)>img{
+    width: 100%;
+    border: 1px solid rgb(199, 199, 199);
+}
+
+#det>section:nth-child(1)>div:nth-child(2){
+    padding: 20px 40px 20px 40px;
+}
+
+#det>section:nth-child(1)>div:nth-child(2)>img{
+    width: 45px;
+}
+
+#det>section:nth-child(2){
+    width: 355px;
+}
+
+#d_frm>div:nth-child(1)>div>h1{
+    color: rgb(234, 88, 35);
+
+}
+
+#add_to_cart{
+    margin-top: 20px;
+    background-color: rgb(234, 88, 35);
+    color: rgb(255,255,255);
+}
+
+#buy_now{
+    margin-top: 12px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255,255,255);
+}
