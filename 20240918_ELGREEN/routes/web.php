@@ -25,6 +25,7 @@ use App\Http\Controllers\SizeController;
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/', 'home')->name('home');
     Route::get('shop', 'shop')->name('shop');
+    Route::get('shop/{slug}','shop_detail')->name('shop_detail');
     Route::get('about', 'about')->name('about');
 });
 Route::controller(AuthenController::class)->group(function () {

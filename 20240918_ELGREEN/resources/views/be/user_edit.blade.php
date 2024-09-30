@@ -44,7 +44,40 @@
                     id="password"
                     value="{{$user->password}}"
                     placeholder="Enter Password" />
-                </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      id="email"
+                    value="{{$user->email}}"
+                      placeholder="Enter Email" />
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="phone">No Hp</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="phone"
+                      id="phone"
+                    value="{{$user->no_hp}}"
+                      placeholder="Enter Phone Ex.(08522...)" />
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="alamat">Alamat</label>
+                    <input
+                      type="area"
+                      class="form-control"
+                      name="alamat"
+                      id="alamat"
+                    value="{{$user->alamat}}"
+                      placeholder="Enter Alamat" />
+                  </div>
               </div>
             </div>
           </div>

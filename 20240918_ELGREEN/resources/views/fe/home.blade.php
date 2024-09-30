@@ -118,66 +118,23 @@
             </div>
             <div class="container-fluid">
                 <div class="row">
+                    @foreach ($produk as $item)
                     <div class="col-3">
-                        <a href="">
+                        <a href="{{route('shop_detail',$item->id)}}">
                             <div class="card" style="width: 18rem;">
                                 <div class="card-img-overlay">
                                     <span class="lbel_ne">New Arrival</span>
                                 </div>
-                                <img src="{{asset('product_img/1727250201.png')}}" class="card-img-top" alt="...">
+                                <img src="{{asset('product_img/'.$item->image)}}" class="card-img-top" alt="...">
                                 <div class="card-body dtl">
-                                    <p class="card-text">Nama Produk</p>
+                                    <p class="card-text">{{$item->nama_produk}}</p>
                                     <hr>
-                                    <p class="card-text">Harga Produk</p>
+                                    <p class="card-text">Rp. {{$item->hrg_produk}}</p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <div class="col-3">
-                        <a href="">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-img-overlay">
-                                    <span class="lbel_ne">New Arrival</span>
-                                </div>
-                                <img src="{{asset('product_img/1727250201.png')}}" class="card-img-top" alt="...">
-                                <div class="card-body dtl">
-                                    <p class="card-text">Nama Produk</p>
-                                    <hr>
-                                    <p class="card-text">Harga Produk</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-img-overlay">
-                                    <span class="lbel_ne">New Arrival</span>
-                                </div>
-                                <img src="{{asset('product_img/1727250201.png')}}" class="card-img-top" alt="...">
-                                <div class="card-body dtl">
-                                    <p class="card-text">Nama Produk</p>
-                                    <hr>
-                                    <p class="card-text">Harga Produk</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-3">
-                        <a href="">
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-img-overlay">
-                                    <span class="lbel_ne">New Arrival</span>
-                                </div>
-                                <img src="{{asset('product_img/1727250201.png')}}" class="card-img-top" alt="...">
-                                <div class="card-body dtl">
-                                    <p class="card-text">Nama Produk</p>
-                                    <hr>
-                                    <p class="card-text">Harga Produk</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
                 </div>
             </div>
             <div>

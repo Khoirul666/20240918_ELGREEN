@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -24,7 +25,7 @@ class AuthenController extends Controller
         if (Auth::attempt([$login_type=>$request->e_phone,'password'=>$request->password,'role'=>'user'])) {
             $request->session()->regenerate();
 
-            return redirect()->intended('home');
+            return redirect()->intended('/');
             // dd('sukses');
         }
         // dd($request,Auth::attempt(['username'=>$request->username,'password'=>$request->password,'role'=>'admin']),Auth::attempt(['username'=>$request->username,'password'=>$request->password,'role'=>'user']));
@@ -32,6 +33,17 @@ class AuthenController extends Controller
     }
     public function signup(){
         return view('auth.signup');
+    }
+    public function psignup(Request $request){
+        // dd($request);
+        User::create([
+            'username'=>$request->username,
+            'password'=>hash::make($request->password),
+            'email'=>$request->email,
+            'no_hp'=>$request->phone,
+            'alamat'=>$request->alamat,
+        ]);
+        return redirect()->route('login');
     }
     public function logout(Request $request){
         Auth::logout();

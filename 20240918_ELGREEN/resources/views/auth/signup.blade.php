@@ -21,19 +21,23 @@
                             @csrf
                             <div class="mb-3">
                                 <label for="username" class="form-label">Username</label>
-                                <input type="username" class="form-control" id="username" placeholder="Enter Username" required>
+                                <input type="username" class="form-control" id="username" name="username" placeholder="Enter Username" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter Password" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" placeholder="Enter Email" required>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="phone" class="form-label">Phone</label>
-                                <input type="phone" class="form-control" id="phone" placeholder="Enter Phone ex.( 08562... )" required>
+                                <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Phone ex.( 08562... )" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="alamat" class="form-label">Alamat</label>
+                                <input type="area" class="form-control" id="alamat" name="alamat" placeholder="Enter Alamat" required>
                             </div>
                             <button type="submit" class="btn btn-primary w-100">SIGN UP</button>
                         </form>
