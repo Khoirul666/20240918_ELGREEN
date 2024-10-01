@@ -32,6 +32,7 @@ class DashboardController extends Controller
     public function shop_checkout(Request $request,$slug){
         // https://api.whatsapp.com/send?phone=6285706291308&text=%2ANAma%20Produk%2A%0D%0Aaskpas%0D%0Aasa%0D%0A%2ANAma%20Produk%2A%0D%0Aqiwoqwi%0D%0A2323%0D%0A%2ATotal%2A%0D%0Aajdajsdja
         dd($request,$slug);
+        
     }
 
     public function about(){

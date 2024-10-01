@@ -39,6 +39,10 @@
                                 <label for="alamat" class="form-label">Alamat</label>
                                 <input type="area" class="form-control" id="alamat" name="alamat" placeholder="Enter Alamat" required>
                             </div>
+                            <div class="mb-3">
+                                <label for="captcha" class="form-label">CAPTCHA</label>
+                                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="Enter CAPTCHA" required>
+                            </div>
                             <button type="submit" class="btn btn-primary w-100">SIGN UP</button>
                         </form>
                         <div class="text-center mt-3">
