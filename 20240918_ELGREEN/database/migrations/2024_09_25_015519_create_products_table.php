@@ -18,14 +18,12 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->integer('hrg_produk');
             $table->unsignedBigInteger('cat_product');
-            $table->unsignedBigInteger('color');
-            $table->unsignedBigInteger('size');
+            $table->json('color');
+            $table->json('size');
             $table->json('image');
             $table->timestamps();
 
             $table->foreign('cat_product')->references('id')->on('cat_products')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('color')->references('id')->on('colors')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('size')->references('id')->on('sizes')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

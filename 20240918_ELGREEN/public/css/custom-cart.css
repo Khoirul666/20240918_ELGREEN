@@ -1,0 +1,21 @@
+.main-content-web .card,
+.main-content-web .card-header,
+.main-content-web .card-footer {
+    border-radius: 0% !important;
+    background-color: transparent !important;
+}
+
+.main-content-web .card {
+    border: 0px !important;
+    margin: 0px !important;
+}
+
+.main-content-web img {
+    height: 100px !important;
+}
+
+.t_produk>div:nth-child(2),
+.t_produk>div:nth-child(3) {
+    padding-left: 5px;
+    padding-right: 5px;
+}

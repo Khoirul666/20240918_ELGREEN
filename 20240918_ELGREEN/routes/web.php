@@ -28,6 +28,10 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('shop/{slug}','shop_detail')->name('shop_detail');
     Route::post('shop/{slug}','shop_checkout')->name('shop_checkout');
     Route::get('about', 'about')->name('about');
+
+    Route::get('cart', 'cart')->name('cart');
+    Route::get('cart_checkout', 'cart_checkout')->name('cart_checkout');
+    Route::delete('cart','dcart')->name('dcart');
 });
 Route::controller(AuthenController::class)->group(function () {
     Route::get('login', 'login')->name('login');

@@ -87,10 +87,13 @@
                 <div class="row">
 
                     @foreach ($produk as $item)
+                    @php
+                    $image = json_decode($item->image);
+                    @endphp
                     <div class="col-3">
                         <a href="{{route('shop_detail',$item->id)}}" style="text-decoration: none">
                             <div class="bdr">
-                                <img src="{{asset('product_img/'.$item->image)}}">
+                                <img src="{{asset('product_img/'.$image[0])}}">
                                 <span>{{$item->nama_produk}}</span>
                                 <br>
                                 <span style="color: black">Rp. {{$item->hrg_produk}}</span>
@@ -98,7 +101,7 @@
                         </a>
                     </div>
                     @endforeach
-                    
+
                 </div>
             </div>
         </div>

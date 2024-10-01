@@ -20,6 +20,7 @@ return new class extends Migration
             $table->unsignedBigInteger('color');
             $table->unsignedBigInteger('size');
             $table->integer('qty_produk');
+            $table->timestamps();
 
             $table->foreign('id_user')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_produk')->references('id')->on('products')->onUpdate('cascade')->onDelete('cascade');

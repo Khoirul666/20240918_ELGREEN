@@ -34,8 +34,11 @@
               </thead>
               <tbody>
                 @foreach($product as $product)
+                @php
+                $image = json_decode($product->image);
+                @endphp
                 <tr>
-                  <td><img src="{{asset('product_img')}}/{{$product->image}}" alt="" srcset="" width="100" height="100"></td>
+                  <td><img src="{{asset('product_img')}}/{{$image[0]}}" alt="" srcset="" width="100" height="100"></td>
                   <td>{{$product->nama_produk}}</td>
                   <td>{{$product->hrg_produk}}</td>
                   <td>

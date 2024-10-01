@@ -47,55 +47,67 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="cat_product">Category Product</label>
-                    <select
-                      class="form-select"
-                      id="cat_product"
-                      name="cat_product"
-                    >
+                  <label for="cat_product">Category Product</label>
+                  <select
+                    class="form-select"
+                    id="cat_product"
+                    name="cat_product">
                     @foreach($category as $category)
-                    <option value="{{$category->id}}" <?= $category->id==$product->cat_product?'selected':'' ?>>{{$category->show}}</option>
+                    <option value="{{$category->id}}" <?= $category->id == $product->cat_product ? 'selected' : '' ?>>{{$category->show}}</option>
                     @endforeach
-                    </select>
-                  </div>
+                  </select>
+                </div>
 
-                  <div class="form-group">
-                      <label for="color">Color</label>
-                      <select
-                        class="form-select"
-                        id="color"
-                        name="color"
-                      >
-                      @foreach($color as $color)
-                      <option value="{{$color->id}}" <?= $color->id==$product->color?'selected':'' ?>>{{$color->show}}</option>
-                      @endforeach
-                      </select>
-                    </div>
+                <div class="form-group">
+                  <label for="color">Color</label>
+                  <select class="form-select" id="color" name="color[]" multiple require>
+                    <?php
+                    $arr_color = json_decode($product->color);
+                    foreach ($color as $color) {
+                      // serach key
+                      $key = array_search($color->id, $arr_color);
+                      if ($key !== false) {
+                        unset($arr_color[$key]);
+                    ?>
+                        <option value="{{$color->id}}" selected >{{$color->show}}</option>
+                      <?php
+                      } else {
+                      ?>
+                        <option value="{{$color->id}}">{{$color->show}}</option>
+                    <?php
+                      }
+                    }
+                    ?>
+                  </select>
+                </div>
 
-                    <div class="form-group">
-                        <label for="size">Size</label>
-                        <select
-                          class="form-select"
-                          id="size"
-                          name="size"
-                        >
-                        @foreach($size as $size)
-                        <option value="{{$size->id}}" <?= $size->id==$product->size?'selected':'' ?>>{{$size->show}}</option>
-                        @endforeach
-                        </select>
-                      </div>
+                <div class="form-group">
+                  <label for="size">Size</label>
+                  <select class="form-select" id="size" name="size[]" multiple require>
+                  <?php
+                    $arr_size = json_decode($product->size);
+                    foreach ($size as $size) {
+                      // serach key
+                      $key = array_search($size->id, $arr_size);
+                      if ($key !== false) {
+                        unset($arr_size[$key]);
+                    ?>
+                        <option value="{{$size->id}}" selected >{{$size->show}}</option>
+                      <?php
+                      } else {
+                      ?>
+                        <option value="{{$size->id}}">{{$size->show}}</option>
+                    <?php
+                      }
+                    }
+                    ?>
+                  </select>
+                </div>
 
-                      <div class="form-group">
-                        <label for="image_product"
-                          >Image Product</label
-                        >
-                        <input
-                          type="file"
-                          class="form-control-file"
-                          id="image_product"
-                          name="image_product"
-                        />
-                      </div>
+                <div class="form-group">
+                  <label for="image_product">Image Product</label>
+                  <input type="file" class="form-control-file" id="image_product" name="image_product[]" multiple require>
+                </div>
               </div>
             </div>
           </div>

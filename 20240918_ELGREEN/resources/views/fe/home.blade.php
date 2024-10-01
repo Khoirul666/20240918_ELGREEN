@@ -125,7 +125,10 @@
                                 <div class="card-img-overlay">
                                     <span class="lbel_ne">New Arrival</span>
                                 </div>
-                                <img src="{{asset('product_img/'.$item->image)}}" class="card-img-top" alt="...">
+                                @php
+                                $image = json_decode($item->image);
+                                @endphp
+                                <img src="{{asset('product_img/'.$image[0])}}" class="card-img-top" alt="...">
                                 <div class="card-body dtl">
                                     <p class="card-text">{{$item->nama_produk}}</p>
                                     <hr>
