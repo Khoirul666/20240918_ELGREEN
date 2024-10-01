@@ -17,4 +17,8 @@ class Product extends Model
         'size',
         'image',
     ];
+
+    public function trx_detail(){
+        return $this->hasMany(Trx_Detail::class);
+    }
 }

@@ -7,14 +7,14 @@
   <div
     class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
     <div>
-      <h3 class="fw-bold mb-3">Sale</h3>
+      <h3 class="fw-bold mb-3">Detail Transaksi</h3>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="card card-stats card-round">
         <div class="card-header">
-          <h4 class="card-title">Data Sale</h4>
+          <h4 class="card-title">Data Transaksi</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -23,27 +23,19 @@
               class="display table table-striped table-hover">
               <thead>
                 <tr>
-                  <th>Nomor Transaksi</th>
-                  <th>Jumlah Transaksi</th>
-                  <th>Date</th>
-                  <th>Action</th>
+                  <th>Nama Produk</th>
+                  <th>Warna Produk</th>
+                  <th>Ukuran</th>
+                  <th>jumlah Produk</th>
                 </tr>
               </thead>
               <tbody>
                 @foreach($trx as $trx)
                 <tr>
-                  <td>{{$trx->no_trx}}</td>
-                  <td>Rp. {{number_format($trx->jumlah_trx,0,',','.')}}</td>
-                  <td>{{DATE('Y m d',strtotime($trx->created_at))}}</td>
-                  <td>
-                    <a href="{{route('detail',$trx->no_trx)}}"
-                      data-bs-toggle="tooltip"
-                      title=""
-                      class="btn btn-link btn-primary btn-lg"
-                      data-original-title="Show">
-                      <i class="fa fa-eye"></i>
-                    </a>
-                  </td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 @endforeach
               </tbody>

@@ -61,6 +61,7 @@ Route::controller(ProdukController::class)->group(function (){
 });
 Route::controller(SaleController::class)->group(function (){
     Route::get('sale','sale')->name('sale');
+    Route::get('sale/{no}','detail')->name('detail');
 });
 Route::controller(CategoryController::class)->group(function (){
     Route::get('category','category')->name('category');
