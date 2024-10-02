@@ -8,13 +8,17 @@
     class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
     <div>
       <h3 class="fw-bold mb-3">Detail Transaksi</h3>
+
+      <h3 class="fw-bold mb-3">Sale</h3>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="card card-stats card-round">
         <div class="card-header">
+
           <h4 class="card-title">Data Transaksi</h4>
+          <h4 class="card-title">Data Sale</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
