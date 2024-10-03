@@ -21,6 +21,6 @@ class Trx_Detail extends Model
     ];
 
     public function produk(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class,'trx_details.id_produk','products.id');
     }
 }

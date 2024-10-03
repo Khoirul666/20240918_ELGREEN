@@ -19,6 +19,6 @@ class Product extends Model
     ];
 
     public function trx_detail(){
-        return $this->hasMany(Trx_Detail::class);
+        return $this->hasMany(Trx_Detail::class,'trx_details.id_produk','products.id');
     }
 }

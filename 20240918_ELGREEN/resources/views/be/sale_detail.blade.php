@@ -36,7 +36,7 @@
               <tbody>
                 @foreach($trx as $trx)
                 <tr>
-                  <td></td>
+                  <td>{{var_dump($trx->produk)}}</td>
                   <td></td>
                   <td></td>
                   <td></td>
