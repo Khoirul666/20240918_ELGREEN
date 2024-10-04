@@ -10,15 +10,14 @@
 <div class="main-content-web">
     <div>
         <span>
-            <a href="">Home</a> > All Products
+            <a href="">Home</a> > Best Sellers
         </span>
     </div>
     <div class="container-fluid all_pro">
         @include('fe.shop_sidebar')
         <div id="data_product">
             <div style="width:673px">
-                <h1>ALL Products</h1>
-                <div>This is your category description. It’s a great place to tell customers what this category is about, connect with your audience and draw attention to your products.</div>
+                <h1>Best Sellers</h1>
             </div>
             <div id="all_produ">
                 <div class="d-flex align-items-center justify-content-between">
@@ -38,21 +37,19 @@
             </div>
             <div id="tmp_produ" class="container-fluid">
                 <div class="row">
-                    @foreach ($produk as $item)
-                    @php
-                    $image = json_decode($item->image);
-                    @endphp
-                    <div class="col-3">
-                        <a href="{{route('shop_detail',$item->id)}}" style="text-decoration: none">
-                            <div class="bdr">
-                                <img src="{{asset('product_img/'.$image[0])}}">
-                                <span>{{$item->nama_produk}}</span>
-                                <br>
-                                <span style="color: black">Rp. {{$item->hrg_produk}}</span>
-                            </div>
+                    <p class="d-inline-flex gap-1">
+                        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            Link with href
                         </a>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-bs-target
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                        </div>
                     </div>
-                    @endforeach
                 </div>
             </div>
         </div>

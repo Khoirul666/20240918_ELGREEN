@@ -31,11 +31,28 @@ class DashboardController extends Controller
         return view('fe.shop', $data);
     }
 
+    public function shop_category($category){
+        if($category=='best_seller'){
+            return view('fe.shop_best_seller');
+        }
+        elseif($category=='new_arrivals'){
+            return view('fe.shop_new_arrivals');
+        }
+        elseif($category!='best_seller'&&$category!='new_arrivals'){
+            echo "non";
+        }
+        dd($category);
+    }
+
     public function shop_detail($id)
     {
+        $produk = new Product;
         $data = [
-            'produk' => Product::findOrFail($id),
+            'p_prev' => $produk->where('id','<',$id)->first(),
+            'produk' => $produk->find($id),
+            'p_nex' => $produk->where('id','>',$id)->first(),
         ];
+        // dd($data);
         return view('fe.shop_detail', $data);
     }
 

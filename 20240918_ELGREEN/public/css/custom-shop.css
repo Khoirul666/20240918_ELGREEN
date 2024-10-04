@@ -1,8 +1,8 @@
-.main-content-web div:nth-child(1){
+.main-content-web>div:nth-child(1){
     padding: 20px 0 20px 50px;
 }
 
-.main-content-web div:nth-child(1) span a{
+.main-content-web>div:nth-child(1) span a{
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
@@ -12,6 +12,7 @@
 }
 
 #sidebar{
+    padding: 20px !important;
     background-color: rgb(31, 31, 31);
     width: 250px;
     margin-left: 10px;
@@ -49,7 +50,7 @@
 
 #data_product{
     width: 100%;
-    padding: 0 0 0 0 !important;
+    padding: 20px !important;
 }
 
 #data_product div:nth-child(1) h1{

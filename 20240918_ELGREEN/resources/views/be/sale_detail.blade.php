@@ -8,17 +8,16 @@
     class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
     <div>
       <h3 class="fw-bold mb-3">Detail Transaksi</h3>
-
-      <h3 class="fw-bold mb-3">Sale</h3>
+    </div>
+    <div class="ms-md-auto py-2 py-md-0">
+      <a href="{{route('sale')}}" class="btn btn-danger btn-round">Back</a>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
       <div class="card card-stats card-round">
         <div class="card-header">
-
           <h4 class="card-title">Data Transaksi</h4>
-          <h4 class="card-title">Data Sale</h4>
         </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -36,10 +35,10 @@
               <tbody>
                 @foreach($trx as $trx)
                 <tr>
-                  <td>{{var_dump($trx->produk)}}</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td>{{$trx->nama_produk}}</td>
+                  <td>{{$trx->warna_produk}}</td>
+                  <td>{{$trx->ukuran_produk}}</td>
+                  <td>{{$trx->qty_produk}}</td>
                 </tr>
                 @endforeach
               </tbody>

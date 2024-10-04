@@ -19,7 +19,7 @@
                 </div>
                 <div class="ms-auto">
                     <span>
-                        <a href="#">
+                        <a href="{{ $p_prev ? route('shop_detail',$p_prev->id) : '#' }}" >
                             <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
                                 <path fill="currentColor"
                                     d="M11.519 13.934c0.214 0.217 0.214 0.566 0 0.783s-0.561 0.217-0.775 0l-6.264-6.326c-0.214-0.217-0.214-0.567 0-0.783l6.264-6.326c0.214-0.217 0.561-0.217 0.775 0s0.214 0.566 0 0.783l-5.712 5.934 5.712 5.934z">
@@ -28,7 +28,7 @@
                             Prev
                         </a>
                         |
-                        <a href="">
+                        <a href="{{ $p_nex ? route('shop_detail',$p_nex->id) : '#' }}">
                             Next
                             <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
                                 <path fill="currentColor"
@@ -154,5 +154,4 @@
 @endsection
 
 @push('jss')
-<script src="{{ asset('bootstrap-5.3.3-dist\js\bootstrap.bundle.js') }}"></script>
 @endpush

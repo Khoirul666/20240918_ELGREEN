@@ -21,12 +21,18 @@ use App\Http\Controllers\SizeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('te_code',function(){
+    return view('te_code');
+});
 
 Route::controller(DashboardController::class)->group(function () {
     Route::get('/', 'home')->name('home');
+    
     Route::get('shop', 'shop')->name('shop');
     Route::get('shop/{slug}','shop_detail')->name('shop_detail');
     Route::post('shop/{slug}','shop_checkout')->name('shop_checkout');
+    Route::get('shop/category/{category}','shop_category')->name('shop_category');
+
     Route::get('about', 'about')->name('about');
 
     Route::get('cart', 'cart')->name('cart');
