@@ -33,13 +33,14 @@
                 <a style="background-color:rgb(45, 120, 213)"></a>
                 <a style="background-color:rgb(119, 231, 200)"></a>
             </nav>
+            
         </div>
         <span data-bs-toggle="collapse" data-bs-target="#sizeOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Size</span>
         <div class="collapse" id="sizeOp">
             <nav class="nav flex-column">
-                <a class="nav-link" href="#">Large</a>
-                <a class="nav-link" href="#">Small</a>
-                <a class="nav-link" href="#">Medium</a>
+                @foreach($size as $size)
+                <a class="nav-link" href="#{{$size->name}}">{{$size->show}}</a>
+                @endforeach
             </nav>
         </div>
     </div>

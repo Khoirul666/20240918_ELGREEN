@@ -25,8 +25,13 @@ class DashboardController extends Controller
 
     public function shop()
     {
+        $produk = new Product();
+        $color = new Color();
+        $size = new Size();
         $data = [
-            'produk' => Product::all(),
+            'produk' => $produk->get(),
+            'color' => $color->get(),
+            'size' => $size->get(),
         ];
         return view('fe.shop', $data);
     }
