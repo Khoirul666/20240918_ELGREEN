@@ -11,16 +11,17 @@
         @endforeach
     </nav>
     <hr>
-    <h2>
+    <h2 class="mb-3">
         <span>Filter by</span>
     </h2>
     <div style="display:flex;flex-direction:column">
-        <span data-bs-toggle="collapse" data-bs-target="#priceOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Price</span>
-        <div class="collapse" id="priceOp">
-            <input type="range" id="vol" name="vol" min="0" max="50">
+        <span class="mb-3" data-bs-toggle="collapse" data-bs-target="#priceOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Price</span>
+        <div class="collapse mb-3" id="priceOp">
+            <span>Min : <i id="min_select"></i></span>
+            <input type="range" class="form-range" id="vol" name="vol" min="{{$min}}" max="{{$max}}" step="1">
         </div>
-        <span data-bs-toggle="collapse" data-bs-target="#coloOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Color</span>
-        <div class="collapse" id="coloOp">
+        <span class="mb-3" data-bs-toggle="collapse" data-bs-target="#coloOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Color</span>
+        <div class="collapse mb-3" id="coloOp">
             <nav class="nav">
                 <a style="background-color:rgb(51, 70, 174)"></a>
                 <a style="background-color:rgb(98, 83, 63)"></a>
@@ -35,11 +36,11 @@
             </nav>
             
         </div>
-        <span data-bs-toggle="collapse" data-bs-target="#sizeOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Size</span>
-        <div class="collapse" id="sizeOp">
+        <span class="mb-3" data-bs-toggle="collapse" data-bs-target="#sizeOp" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Size</span>
+        <div class="collapse mb-3" id="sizeOp">
             <nav class="nav flex-column">
                 @foreach($size as $size)
-                <a class="nav-link" href="#{{$size->name}}">{{$size->show}}</a>
+                <a class="nav-link" href="{{$size['name']}}">{{$size['show']}}</a>
                 @endforeach
             </nav>
         </div>

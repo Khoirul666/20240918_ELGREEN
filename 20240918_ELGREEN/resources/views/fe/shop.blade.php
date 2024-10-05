@@ -3,6 +3,7 @@
 @section('title','SHOP')
 
 @push('csss')
+
 <link rel="stylesheet" href="{{ asset('css/custom-shop.css') }}">
 @endpush
 
@@ -24,21 +25,21 @@
                 <div class="d-flex align-items-center justify-content-between">
                     Product
                     <div>
-                        <label for="">Sort By :</label>
-                        <select name="" id="">
-                            <option value="">Recommended</option>
-                            <option value="">Newest</option>
-                            <option value="">Price ( Low to High )</option>
-                            <option value="">Price ( High to Low )</option>
-                            <option value="">Name ( A - Z )</option>
-                            <option value="">Name ( Z - A )</option>
+                        <label for="sby">Sort By :</label>
+                        <select name="sby" id="sby">
+                            <option value="recommended">Recommended</option>
+                            <option value="newest">Newest</option>
+                            <option value="price_ascending">Price ( Low to High )</option>
+                            <option value="price_descending">Price ( High to Low )</option>
+                            <option value="name_ascending">Name ( A - Z )</option>
+                            <option value="name_descending">Name ( Z - A )</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div id="tmp_produ" class="container-fluid">
-                <div class="row">
-                    @foreach ($produk as $item)
+                <div class="row" id="show_data">
+                    {{-- @foreach ($produk as $item)
                     @php
                     $image = json_decode($item->image);
                     @endphp
@@ -52,7 +53,7 @@
                             </div>
                         </a>
                     </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
             </div>
         </div>
@@ -61,5 +62,6 @@
 @endsection
 
 @push('jss')
-
+<script src="{{asset('js/jquery-3.7.1.min.js')}}"></script>
+<script src="{{asset('js/custom-shop.js')}}"></script>
 @endpush

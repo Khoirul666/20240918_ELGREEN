@@ -33,6 +33,7 @@ class ProdukController extends Controller
     public function padd_produk(Request $request)
     {
         $request->validate([
+            'image_product' => 'required|array|max:5',
             'image_product.*' => 'required|image|mimes:jpeg,jpg,png,JPEG,JPG,PNG|max:1024',
         ]);
 
@@ -81,6 +82,7 @@ class ProdukController extends Controller
             'cat_product' => $request->cat_product,
             'color' => json_encode($arr_color),
             'size' => json_encode($arr_size),
+            'recom' => $request->recom,
             'image' => json_encode($arr_img),
         ]);
         return redirect()->route('produk');
@@ -139,6 +141,7 @@ class ProdukController extends Controller
                 'cat_product' => $request->cat_product,
                 'color' => json_encode($arr_color),
                 'size' => json_encode($arr_size),
+                'recom' => $request->recom,
                 'image' => json_encode($arr_img),
             ]);
         } else {
@@ -148,6 +151,7 @@ class ProdukController extends Controller
                 'cat_product' => $request->cat_product,
                 'color' => json_encode($arr_color),
                 'size' => json_encode($arr_size),
+                'recom' => $request->recom,
             ]);
         }
 

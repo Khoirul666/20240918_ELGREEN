@@ -25,15 +25,100 @@ class DashboardController extends Controller
 
     public function shop()
     {
-        $produk = new Product();
-        $color = new Color();
-        $size = new Size();
+        $data_produk = Product::latest();
+        // get data all size dan jadikan size yang ada pada produk
+        $size = $data_produk->select('size');
+        $arr_size = [];
+        foreach($size->get() as $size){
+            $convert_json = json_decode($size,true);
+            foreach($convert_json as $cj){
+                foreach(json_decode($cj) as $jd){
+                    $inar = in_array($jd,$arr_size);
+                    if($inar==FALSE){
+                        array_push($arr_size,$jd);
+                    }
+                }
+            }
+        }
+        $size_collect = collect([]);
+        foreach(Size::all() as $size){
+            $inarr = in_array($size->id,$arr_size);
+            if($inarr){
+                $size_collect->push([
+                    'id'=>$size->id,
+                    'name'=>$size->name,
+                    'show'=>$size->show
+                ]);
+            }
+        }
+        // get data all color dan jadikan color yang ada pada produk
+        $color = $data_produk->select('color');
+        $arr_color = [];
+        foreach($color->get() as $color){
+            $convert_json = json_decode($color,true);
+            foreach($convert_json as $cj){
+                foreach(json_decode($cj) as $jd){
+                    $inar = in_array($jd,$arr_color);
+                    if($inar==FALSE){
+                        array_push($arr_color,$jd);
+                    }
+                }
+            }
+        }
+        $color_collect = collect([]);
+        foreach(Color::all() as $color){
+            $inarr = in_array($color->id,$arr_color);
+            if($inarr){
+                $color_collect->push([
+                    'id'=>$color->id,
+                    'name'=>$color->name,
+                    'show'=>$color->show,
+                    'color'=>$color->color
+                ]);
+            }
+        }
         $data = [
-            'produk' => $produk->get(),
-            'color' => $color->get(),
-            'size' => $size->get(),
+            // 'produk' => $produk->get(),
+            'min' => $data_produk->min('hrg_produk'),
+            'max' => $data_produk->max('hrg_produk'),
+            'size' => $size_collect,
+            'color' => $color_collect,
         ];
+        // dd($data);
         return view('fe.shop', $data);
+    }
+
+    public function shop_get_data(){
+        $produk = [];
+        if(request()->sby){
+            if(request()->sby=='recommended'){
+                $produk = Product::orderBy('recom','DESC')->get();
+            }
+            if(request()->sby=='newest'){
+                $produk = Product::orderBy('created_at','DESC')->get();
+            }
+            if(request()->sby=='price_ascending'){
+                $produk = Product::orderBy('hrg_produk','ASC')->get();
+            }
+            if(request()->sby=='price_descending'){
+                $produk = Product::orderBy('hrg_produk','DESC')->get();
+            }
+            if(request()->sby=='name_ascending'){
+                $produk = Product::orderBy('nama_produk','ASC')->get();
+            }
+            if(request()->sby=='name_descending'){
+                $produk = Product::orderBy('nama_produk','DESC')->get();
+            }
+        }
+        else{
+            $produk = Product::all();
+        }
+        $data = [
+            'produk'=>$produk,
+            'sby'=>request()->sby
+        ];
+        // dd($data);
+        return response()->json($data);
     }
 
     public function shop_category($category){

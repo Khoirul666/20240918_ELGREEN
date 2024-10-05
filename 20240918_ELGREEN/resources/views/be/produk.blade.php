@@ -38,7 +38,11 @@
                 $image = json_decode($product->image);
                 @endphp
                 <tr>
+                  @if(empty($image))
+                  <td>gambar rusak atau belum terupload</td>
+                  @else
                   <td><img src="{{asset('product_img')}}/{{$image[0]}}" alt="" srcset="" width="100" height="100"></td>
+                  @endif
                   <td>{{$product->nama_produk}}</td>
                   <td>{{$product->hrg_produk}}</td>
                   <td>

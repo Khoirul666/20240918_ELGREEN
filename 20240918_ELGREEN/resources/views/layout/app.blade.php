@@ -10,11 +10,14 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('image/elgreen.png') }}" />
     <link rel="stylesheet" href="{{ asset('bootstrap-5.3.3-dist\css\bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom-khoi.css') }}">
+
+    <script src="https://kit.fontawesome.com/691cd9cb9a.js" crossorigin="anonymous"></script>
+
     @stack('csss')
 
 </head>
 
-<body style="background-color: #c9c9c9;">
+<body style="background-color: #e7e7e7;">
     @include('layout.fe-navbar')
     @yield('content')
 

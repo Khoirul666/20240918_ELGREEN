@@ -63,6 +63,14 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="recom">Rekomendasi</label>
+                                    <select class="form-select" id="recom" name="recom">
+                                        <option value="0">Tidak Rekomendasi</option>
+                                        <option value="1">Masuk Rekomendasi</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="image_product">Image Product</label>
                                     <input type="file" class="form-control-file" id="image_product" name="image_product[]" multiple require>
                                 </div>

@@ -232,6 +232,15 @@ section {
     padding-bottom: 80px;
 }
 
+#motiv_2>div>h1>span:nth-child(1),
+#motiv_2>div>h1>span:nth-child(3) {
+    color: rgb(255 , 255, 255) !important;
+}
+
+#motiv_2>div>h1>span:nth-child(5) {
+    color: rgb(135, 234, 121) !important;
+}
+
 #motiv_2>div:nth-child(2) {
     width: 353px;
     height: auto;
@@ -299,6 +308,10 @@ section {
     background-color: rgb(135, 234, 121);
     padding: 0px 10px 0px 10px;
     color: rgb(255, 255, 255);
+}
+
+#ne_arr .card{
+    border-radius: 0% !important;
 }
 
 #ne_arr .card-img-overlay {
