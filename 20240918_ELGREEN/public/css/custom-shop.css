@@ -1,17 +1,17 @@
-.main-content-web>div:nth-child(1){
+.main-content-web>div:nth-child(1) {
     padding: 20px 0 20px 50px;
 }
 
-.main-content-web>div:nth-child(1) span a{
+.main-content-web>div:nth-child(1) span a {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
 
-.all_pro{
+.all_pro {
     width: 100% !important;
 }
 
-#sidebar{
+#sidebar {
     padding: 20px !important;
     background-color: rgb(31, 31, 31);
     width: 250px;
@@ -20,41 +20,31 @@
     margin-bottom: 20px;
 }
 
-#sidebar a{
+#sidebar a {
     text-decoration: none;
     color: rgb(255, 255, 255) !important;
 }
 
-#product{
+#product {
     background-color: rgb(99, 110, 110);
-    flex:1;
+    flex: 1;
 }
 
-#coloOp{
+#coloOp {
     width: 100%;
 }
 
-#coloOp nav a{
-    border: 1px solid #c9c9c9;
-    border-radius: 50%;
-    height: 20px !important;
-    width: 20px !important;
-    position: relative;
-    padding: 5px;
-    margin: 3px;
-}
-
-.all_pro{
+.all_pro {
     display: flex;
 }
 
-#data_product{
+#data_product {
     width: 100%;
     padding: 20px !important;
 }
 
-#data_product div:nth-child(1) h1{
-    transform: scale(1,1.5);
+#data_product div:nth-child(1) h1 {
+    transform: scale(1, 1.5);
     color: rgb(234, 88, 35);
 }
 
@@ -62,39 +52,56 @@
     padding: 0px 20px 0px 0px !important;
 }
 
-#all_produ select{
+#all_produ select {
     border: 0;
     background-color: transparent;
 }
 
-#all_produ select:focus{
+#all_produ select:focus {
     border: 0;
     background-color: transparent;
     outline: 0;
 }
 
-#tmp_produ{
+#tmp_produ {
     padding: 0px 20px 0px 0px !important;
 }
 
-#tmp_produ div div{
+#tmp_produ div div {
     padding: 10px !important;
 }
 
-#tmp_produ div div{
+#tmp_produ div div {
     text-align: center;
 }
 
-#tmp_produ div div img{
+#tmp_produ div div img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-#tmp_produ div div span{
-    color: rgb(234,88,35);
+#tmp_produ div div span {
+    color: rgb(234, 88, 35);
 }
 
-#tmp_produ div div .bdr{
+#tmp_produ div div .bdr {
     border: 2px solid rgb(124, 124, 124);
+}
+
+#checkbox_color{
+    padding: 0px !important;
+}
+
+.custom_checkbox {
+    padding: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #c9c9c9;
+    cursor: pointer;
+}
+.custom_checkbox.selected {
+    border: 3px solid #c9c9c9;
 }

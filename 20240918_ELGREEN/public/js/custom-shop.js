@@ -11,6 +11,7 @@ $(document).ready(function () {
         load_data();
     });
 
+    // slider
     var slider = document.getElementById('slider-range');
 
     noUiSlider.create(slider, {
@@ -45,6 +46,29 @@ $(document).ready(function () {
         }
     });
 
+    // color
+    const checkboxes = document.querySelectorAll('.custom_checkbox');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', function () {
+            // Toggle class 'selected' saat checkbox diklik
+            const input = this.querySelector('.checkbox_input');
+            input.checked = !input.checked;
+
+            if (input.checked) {
+                this.classList.add('selected');
+            } else {
+                this.classList.remove('selected');
+            }
+
+            // Menampilkan pilihan checkbox yang dipilih di console log
+            const selectedValues = Array.from(checkboxes)
+                .filter(cb => cb.querySelector('.checkbox_input').checked)
+                .map(cb => cb.getAttribute('data-value'));
+
+            console.log('Checkbox yang dipilih:', selectedValues);
+        });
+    });
+
 });
 
 function load_data() {
@@ -70,15 +94,15 @@ function load_data() {
                 show_data_html += `<div class="col-3">`
 
                 show_data_html += `<a href="shop/` + value.id + `" style="text-decoration: none">`
-                
+
                 show_data_html += `<div class="bdr">`
-                show_data_html += `<img src = "product_img/`+s_img+`" >`
-                show_data_html += `<span>`+value.nama_produk+`</span>`
+                show_data_html += `<img src = "product_img/` + s_img + `" >`
+                show_data_html += `<span>` + value.nama_produk + `</span>`
                 show_data_html += `<br>`
-                show_data_html += `<span style="color: black">Rp. `+value.hrg_produk+`</span>`
-                
+                show_data_html += `<span style="color: black">Rp. ` + value.hrg_produk + `</span>`
+
                 show_data_html += `</div>`
-                
+
                 show_data_html += `</a>`
 
                 show_data_html += `</div>`

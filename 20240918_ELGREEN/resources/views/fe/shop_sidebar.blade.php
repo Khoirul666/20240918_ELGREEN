@@ -7,8 +7,8 @@
         <a style="padding-top:10px" href="{{ route('shop_category', 'best_seller') }}">Best Sellers</a>
         <a style="padding-top:10px" href="{{ route('shop_category', 'new_arrivals') }}">New Arrivals</a>
         @foreach (App\Models\Cat_Product::all() as $category_product)
-            <a style="padding-top:10px"
-                href="{{ route('shop_category', $category_product->name) }}">{{ $category_product->show }}</a>
+        <a style="padding-top:10px"
+            href="{{ route('shop_category', $category_product->name) }}">{{ $category_product->show }}</a>
         @endforeach
     </nav>
     <hr>
@@ -29,32 +29,13 @@
         <span class="mt-3" data-bs-toggle="collapse" data-bs-target="#coloOp"
             aria-controls="navbarToggleExternalContent" aria-expanded="false"
             aria-label="Toggle navigation">Color</span>
-        <div class="" id="coloOp">
-            <nav class="nav">
-                <a style="background-color:rgb(51, 70, 174)"></a>
-                <a style="background-color:rgb(98, 83, 63)"></a>
-                <a style="background-color:rgb(222, 52, 109)"></a>
-                <a style="background-color:rgb(54, 131, 81)"></a>
-                <a style="background-color:rgb(67, 79, 95)"></a>
-                <a style="background-color:rgb(250, 137, 40)"></a>
-                <a style="background-color:rgb(159, 90, 242)"></a>
-                <a style="background-color:rgb(174, 22, 22)"></a>
-                <a style="background-color:rgb(45, 120, 213)"></a>
-                <a style="background-color:rgb(119, 231, 200)"></a>
-            </nav>
-            <ul class="hstack gap-3">
-                <li class="list-group-item">
-                    <input type="checkbox" value="1" id="first_checkbox">
-                    <label class="stretched-link" for="first_checkbox" style="background-color: aqua"> </label>
+        <div class="collapse mt-3" id="coloOp">
+            <ul id="checkbox_color">
+                @foreach($color as $color)
+                <li class="custom_checkbox" data-value="{{$color['id']}}" style="background-color: {{$color['color']}};">
+                    <input type="checkbox" value="{{$color['name']}}" id="color{{$color['id']}}" name="color_check[]" class="checkbox_input" hidden>
                 </li>
-                <li class="list-group-item">
-                    <input type="checkbox" value="1" id="first_checkbox1">
-                    <label class="stretched-link" for="first_checkbox1" style="background-color: aqua"> </label>
-                </li>
-                <li class="list-group-item">
-                    <input type="checkbox" value="1" id="first_checkbox2">
-                    <label class="stretched-link" for="first_checkbox2" style="background-color: aqua"> </label>
-                </li>
+                @endforeach
             </ul>
         </div>
         <span class="mt-3" data-bs-toggle="collapse" data-bs-target="#sizeOp"
@@ -62,7 +43,7 @@
         <div class="collapse mb-3" id="sizeOp">
             <nav class="nav flex-column">
                 @foreach ($size as $size)
-                    <a class="nav-link" href="{{ $size['name'] }}">{{ $size['show'] }}</a>
+                <a class="nav-link" href="{{ $size['name'] }}">{{ $size['show'] }}</a>
                 @endforeach
             </nav>
         </div>
