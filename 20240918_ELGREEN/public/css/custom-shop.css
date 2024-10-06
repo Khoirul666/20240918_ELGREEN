@@ -89,7 +89,7 @@
     border: 2px solid rgb(124, 124, 124);
 }
 
-#checkbox_color{
+#checkbox_color {
     padding: 0px !important;
 }
 
@@ -102,6 +102,29 @@
     border: 1px solid #c9c9c9;
     cursor: pointer;
 }
+
 .custom_checkbox.selected {
     border: 3px solid #c9c9c9;
+}
+
+.custom_checkbox_size {
+    cursor: pointer;
+}
+
+.custom_checkbox_size input[type="checkbox"] {
+    /* display: none; */
+}
+
+.custom_checkbox_size .d-flex div:nth-child(1){
+    width: 20px;
+}
+
+.custom_checkbox_size .check_icon {
+    color: #ff0000;
+    font-size: 12px;
+    display: none; /* Sembunyikan icon secara default */
+}
+
+.custom_checkbox_size.selected .check_icon {
+    display: inline-block;
 }

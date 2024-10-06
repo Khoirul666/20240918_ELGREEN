@@ -40,7 +40,36 @@
         </div>
         <span class="mt-3" data-bs-toggle="collapse" data-bs-target="#sizeOp"
             aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">Size</span>
-        <div class="collapse mb-3" id="sizeOp">
+        <div class=" mb-3" id="sizeOp">
+            <div class="d-flex flex-column mb-3">
+                <div class="p-2 custom_checkbox_size" data-value="1">
+                    <input type="checkbox" value="x" id="sizex" name="size_check[]" class="checkbox_size" hidden>
+                    <div class="d-flex">
+                        <div>
+                            <span class="check_icon"><i class="fa-solid fa-check"></i></span>
+                        </div>
+                        <div class="flex-fill"><span>Size X</span></div>
+                    </div>
+                </div>
+                <div class="p-2 custom_checkbox_size" data-value="2">
+                    <input type="checkbox" value="y" id="sizey" name="size_check[]" class="checkbox_size" hidden>
+                    <div class="d-flex">
+                        <div>
+                            <span class="check_icon"><i class="fa-solid fa-check"></i></span>
+                        </div>
+                        <div class="flex-fill"><span>Size Y</span></div>
+                    </div>
+                </div>
+                <div class="p-2 custom_checkbox_size" data-value="3">
+                    <input type="checkbox" value="z" id="sizez" name="size_check[]" class="checkbox_size" hidden>
+                    <div class="d-flex">
+                        <div>
+                            <span class="check_icon"><i class="fa-solid fa-check"></i></span>
+                        </div>
+                        <div class="flex-fill"><span>Size Z</span></div>
+                    </div>
+                </div>
+            </div>
             <nav class="nav flex-column">
                 @foreach ($size as $size)
                 <a class="nav-link" href="{{ $size['name'] }}">{{ $size['show'] }}</a>

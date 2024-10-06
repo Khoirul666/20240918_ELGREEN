@@ -69,6 +69,27 @@ $(document).ready(function () {
         });
     });
 
+    // size
+    const checkboxes_size = document.querySelectorAll('.custom_checkbox_size');
+    checkboxes_size.forEach(checkbox=>{
+        checkbox.addEventListener('click',function(){
+            const input = this.querySelector('.checkbox_size');
+            input.checked = !input.checked;
+
+            if (input.checked) {
+                this.classList.add('selected');
+            } else {
+                this.classList.remove('selected');
+            }
+            // Menampilkan pilihan checkbox yang dipilih di console log
+            const selectedValues = Array.from(checkboxes_size)
+                .filter(cb => cb.querySelector('.checkbox_size').checked)
+                .map(cb => cb.getAttribute('data-value'));
+
+            console.log('Checkbox Size yang dipilih:', selectedValues);
+        });
+    });
+
 });
 
 function load_data() {
