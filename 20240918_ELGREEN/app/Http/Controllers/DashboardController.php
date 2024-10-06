@@ -79,8 +79,8 @@ class DashboardController extends Controller
         }
         $data = [
             // 'produk' => $produk->get(),
-            'min' => $data_produk->min('hrg_produk'),
-            'max' => $data_produk->max('hrg_produk'),
+            'min' => intval($data_produk->min('hrg_produk')),
+            'max' => intval($data_produk->max('hrg_produk')),
             'size' => $size_collect,
             'color' => $color_collect,
         ];
