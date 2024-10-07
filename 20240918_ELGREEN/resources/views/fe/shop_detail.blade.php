@@ -70,7 +70,6 @@
                             <div class="form-group">
                                 <label class="form-label" for="size">Size</label>
                                 <select name="size" class="form-select" id="size">
-
                                     @foreach(json_decode($produk->size) as $size)
                                     <option value="{{App\Models\Size::find($size)->id}}">{{App\Models\Size::find($size)->show}} {{$size}}</option>
                                     @endforeach
@@ -134,9 +133,9 @@
                             </div>
                         </div>
                         <hr>
-                        <button data-bs-toggle="collapse" href="#ship" aria-expanded="false" aria-controls="ship">
+                        <h4 data-bs-toggle="collapse" href="#ship" aria-expanded="false" aria-controls="ship">
                             Shipping Info
-                        </button>
+                        </h4>
                         <div class="collapse" id="ship">
                             <div class="card card-body">
                                 I'm a shipping policy. I'm a great place to add more information about your shipping

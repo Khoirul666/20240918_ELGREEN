@@ -29,7 +29,10 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/', 'home')->name('home');
     
     Route::get('shop', 'shop')->name('shop');
-    Route::get('shop_get_data','shop_get_data')->name('shop_get_data');
+    Route::get('shop_arrivals', 'shop_arrivals')->name('shop_arrivals');
+    Route::post('shop_get_data','shop_get_data')->name('shop_get_data');
+    Route::post('shop/category/shop_get_data','shop_get_data')->name('shop_get_data_category');
+    
     Route::get('shop/{slug}','shop_detail')->name('shop_detail');
     Route::post('shop/{slug}','shop_checkout')->name('shop_checkout');
     Route::get('shop/category/{category}','shop_category')->name('shop_category');

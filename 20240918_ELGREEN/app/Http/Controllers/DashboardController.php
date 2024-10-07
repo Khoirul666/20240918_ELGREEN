@@ -23,8 +23,7 @@ class DashboardController extends Controller
         return view('fe.home', $data);
     }
 
-    public function shop()
-    {
+    public function data_shop(){
         $data_produk = Product::latest();
         // get data all size dan jadikan size yang ada pada produk
         $size = $data_produk->select('size');
@@ -85,53 +84,90 @@ class DashboardController extends Controller
             'color' => $color_collect,
         ];
         // dd($data);
+        return $data;
+    }
+
+    public function shop()
+    {
+        $data = $this->data_shop();
         return view('fe.shop', $data);
     }
 
-    public function shop_get_data(){
-        $produk = [];
+    public function shop_get_data(Request $request){
+        $produk = Product::query();
+        if(request()->menu){
+            if(request()->menu=="new_arrivals"){
+                $produk->latest()->limit(4);
+            }
+        }
+        // Price
+        $min = $request->input('min');
+        $max = $request->input('max');
+        $produk->whereBetween('hrg_produk',[$min,$max]);
+        // Color
+        $color = $request->input('color');
+        if(is_array($color)){
+            foreach($color as $value){
+                // $color = $value;
+                $produk->whereJsonContains('color',$value);
+            }
+        }
+        // Color
+        $size = $request->input('size');
+        if(is_array($size)){
+            foreach($size as $value){
+                // $size = $value;
+                $produk->whereJsonContains('size',$value);
+            }
+        }
+        // Sort By
         if(request()->sby){
             if(request()->sby=='recommended'){
-                $produk = Product::orderBy('recom','DESC')->get();
+                $produk->orderBy('recom','DESC')->get();
             }
             if(request()->sby=='newest'){
-                $produk = Product::orderBy('created_at','DESC')->get();
+                $produk->orderBy('created_at','DESC')->get();
             }
             if(request()->sby=='price_ascending'){
-                $produk = Product::orderBy('hrg_produk','ASC')->get();
+                $produk->orderBy('hrg_produk','ASC')->get();
             }
             if(request()->sby=='price_descending'){
-                $produk = Product::orderBy('hrg_produk','DESC')->get();
+                $produk->orderBy('hrg_produk','DESC')->get();
             }
             if(request()->sby=='name_ascending'){
-                $produk = Product::orderBy('nama_produk','ASC')->get();
+                $produk->orderBy('nama_produk','ASC')->get();
             }
             if(request()->sby=='name_descending'){
-                $produk = Product::orderBy('nama_produk','DESC')->get();
+                $produk->orderBy('nama_produk','DESC')->get();
             }
         }
-        else{
-            $produk = Product::all();
-        }
         $data = [
-            'produk'=>$produk,
-            'sby'=>request()->sby
+            // 'cek'=> $color,
+            'produk'=>$produk->get(),
+            'min'=>$request->input('min'),
+            'max'=>$request->input('max'),
+            'color'=>$request->input('color'),
+            'size'=>$request->input('size'),
+            'sby'=> $request->input('sby'),
         ];
-        // dd($data);
+        // dd(request()->data_array);
         return response()->json($data);
     }
 
     public function shop_category($category){
         if($category=='best_seller'){
-            return view('fe.shop_best_seller');
+            $data = $this->data_shop();
+            return view('fe.shop_best_seller',$data);
         }
         elseif($category=='new_arrivals'){
-            return view('fe.shop_new_arrivals');
+            $data = $this->data_shop();
+            return view('fe.shop_new_arrivals',$data);
         }
         elseif($category!='best_seller'&&$category!='new_arrivals'){
-            echo "non";
+            $data = $this->data_shop();
+            return view('fe.shop_category',$data);
         }
-        dd($category);
+        // dd($category);
     }
 
     public function shop_detail($id)

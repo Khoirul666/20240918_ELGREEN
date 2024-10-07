@@ -111,10 +111,6 @@
     cursor: pointer;
 }
 
-.custom_checkbox_size input[type="checkbox"] {
-    /* display: none; */
-}
-
 .custom_checkbox_size .d-flex div:nth-child(1){
     width: 20px;
 }

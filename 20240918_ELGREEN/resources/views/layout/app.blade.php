@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'HOME') | ELGREEN</title>
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('image/elgreen.png') }}" />
@@ -12,7 +13,6 @@
     <link rel="stylesheet" href="{{ asset('css/custom-khoi.css') }}">
 
     <script src="https://kit.fontawesome.com/691cd9cb9a.js" crossorigin="anonymous"></script>
-
     @stack('csss')
 
 </head>

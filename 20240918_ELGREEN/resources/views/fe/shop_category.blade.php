@@ -28,7 +28,7 @@
 <div class="main-content-web">
     <div>
         <span>
-            <a href="">Home</a> > All Products
+            <a href="">Home</a> >
         </span>
     </div>
     <div class="container-fluid all_pro">
@@ -91,7 +91,7 @@
     let data_array = [];
     let data_array_color = [];
     let data_array_size = [];
-    let menu_saat_ini = "all_product"
+    let menu_saat_ini = "best_seller"
     let url = "shop_get_data"
 </script>
 <script src="{{ asset('js/custom-shop.js') }}"></script>
