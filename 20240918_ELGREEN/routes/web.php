@@ -35,6 +35,7 @@ Route::controller(DashboardController::class)->group(function () {
     
     Route::get('shop/{slug}','shop_detail')->name('shop_detail');
     Route::post('shop/{slug}','shop_checkout')->name('shop_checkout');
+    
     Route::get('shop/category/{category}','shop_category')->name('shop_category');
 
     Route::get('about', 'about')->name('about');

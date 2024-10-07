@@ -82,6 +82,7 @@ class DashboardController extends Controller
             'max' => intval($data_produk->max('hrg_produk')),
             'size' => $size_collect,
             'color' => $color_collect,
+            'url_ajax_shop' => route('home'),
         ];
         // dd($data);
         return $data;

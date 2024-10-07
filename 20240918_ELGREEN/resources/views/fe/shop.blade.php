@@ -91,8 +91,9 @@
     let data_array = [];
     let data_array_color = [];
     let data_array_size = [];
-    let menu_saat_ini = "all_product"
-    let url = "shop_get_data"
+    let menu_saat_ini = "all_product";
+    let base = @json($url_ajax_shop);
+    let url = base+"/shop_get_data";
 </script>
 <script src="{{ asset('js/custom-shop.js') }}"></script>
 @endpush

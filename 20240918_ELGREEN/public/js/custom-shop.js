@@ -105,6 +105,7 @@ $(document).ready(function () {
 });
 
 function load_data() {
+    // console.log(url);
     // console.log("data array : ", data_array)
     // console.log(JSON.stringify(data_array));
     // Mengirim nilai yang dipilih ke server menggunakan AJAX
@@ -139,7 +140,7 @@ function load_data() {
                 show_data_html += `<a href="shop/` + value.id + `" style="text-decoration: none">`
 
                 show_data_html += `<div class="bdr">`
-                show_data_html += `<img src = "{{asset()}}" >`
+                show_data_html += `<img src = "`+base+`/product_img/`+s_img+`" >`
                 show_data_html += `<span>` + value.nama_produk + `</span>`
                 show_data_html += `<br>`
                 show_data_html += `<span style="color: black">Rp. ` + value.hrg_produk + `</span>`
