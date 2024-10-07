@@ -8,6 +8,7 @@
         </div>
 
         <div>
+            <!-- navbar menu -->
             <div class="collapse navbar-collapse" id="navbarMenu">
                 <ul class="nav justify-content-center">
                     <li class="nav-item" style="width: 218px; height:50px">
@@ -44,7 +45,7 @@
                     Log Out
                 </a>
                 @else
-                
+
                 <a href="{{ route('login') }}"
                     style="text-decoration:none;background:transparent;border:0;margin:0;color:rgb(135,234,121);padding-right:20px; width:120px;">
                     {{-- <svg data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="22"
@@ -62,29 +63,26 @@
             </div>
 
             @if (Auth()->check())
-            <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;"
-                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                <a href="{{ route('cart') }}">
-                    <div style="width:56px;position:relative;margin: 35px 0px 41px 0;left:25px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
-                            viewBox="221.4 359.3 267 123" data-hook="svg-icon-8">
-                            <rect x="221.4" y="403.7" width="152.4" height="6"></rect>
-                            <path
-                                d="M345.9 482.3h-96.4c-1.2 0-2.4-1.2-3-2.4l-19.6-70.8 6-1.8 19.1 68.5h92.3l19-68.5 6 1.8 -19.6 70.8C348.2 481.1 347 482.3 345.9 482.3z">
-                            </path>
-                            <rect x="259" y="380.1" transform="matrix(-0.527 -0.8498 0.8498 -0.527 109.9867 827.3946)"
-                                width="52.4" height="6"></rect>
-                            <rect x="292.3" y="424.5" width="10.7" height="10.7"></rect>
-                            <rect x="315.5" y="424.5" width="10.7" height="10.7"></rect>
-                            <rect x="269.1" y="424.5" width="10.7" height="10.7"></rect>
-                            <rect x="292.3" y="447.7" width="10.7" height="10.7"></rect>
-                            <rect x="315.5" y="447.7" width="10.7" height="10.7"></rect>
-                            <rect x="269.1" y="447.7" width="10.7" height="10.7"></rect>
-                            <text x="390" y="474" text-anchor="start" class="uxskpx M846Y_" data-hook="items-count"
-                                style="font-size: 90px">{{App\Models\Cart::where('id_user','=',Auth()->user()->id)->count()}}</text>
-                        </svg>
-                    </div>
-                </a>
+            <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                <div style="width:56px;position:relative;margin: 35px 0px 41px 0;left:25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
+                        viewBox="221.4 359.3 267 123" data-hook="svg-icon-8">
+                        <rect x="221.4" y="403.7" width="152.4" height="6"></rect>
+                        <path
+                            d="M345.9 482.3h-96.4c-1.2 0-2.4-1.2-3-2.4l-19.6-70.8 6-1.8 19.1 68.5h92.3l19-68.5 6 1.8 -19.6 70.8C348.2 481.1 347 482.3 345.9 482.3z">
+                        </path>
+                        <rect x="259" y="380.1" transform="matrix(-0.527 -0.8498 0.8498 -0.527 109.9867 827.3946)"
+                            width="52.4" height="6"></rect>
+                        <rect x="292.3" y="424.5" width="10.7" height="10.7"></rect>
+                        <rect x="315.5" y="424.5" width="10.7" height="10.7"></rect>
+                        <rect x="269.1" y="424.5" width="10.7" height="10.7"></rect>
+                        <rect x="292.3" y="447.7" width="10.7" height="10.7"></rect>
+                        <rect x="315.5" y="447.7" width="10.7" height="10.7"></rect>
+                        <rect x="269.1" y="447.7" width="10.7" height="10.7"></rect>
+                        <text x="390" y="474" text-anchor="start" class="uxskpx M846Y_" data-hook="items-count"
+                            style="font-size: 90px">{{App\Models\Cart::where('id_user','=',Auth()->user()->id)->count()}}</text>
+                    </svg>
+                </div>
             </div>
             @else
             <div style="background-color: rgba(135, 234, 121, 1); height:100px; width:100px; cursor: pointer;">
@@ -107,6 +105,7 @@
                         </svg>
                     </div>
                 </a>
+                askalksdn
             </div>
             @endif
 
@@ -114,3 +113,29 @@
 
     </div>
 </nav>
+
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        @foreach(App\Models\Cart::where('id_user',Auth()->user()->id)->get() as $value)
+        <div class="d-flex">
+            <div class="p-2">
+                @php
+                $produk = App\Models\Product::find($value->id_user);
+                $image = json_decode($produk->image);
+                @endphp
+                <img src="{{ asset('product_img/' . $image[0]) }}" width="80px">
+            </div>
+            <div class="p-2 d-flex flex-column">
+                <div>{{$produk->nama_produk}}</div>
+                <div>Rp. {{$produk->hrg_produk}}</div>
+                <div>Rp. {{$value->qty_produk}}</div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>

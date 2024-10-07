@@ -33,7 +33,7 @@
                 @foreach ($color as $color)
                     <li class="custom_checkbox" data-value="{{ $color['id'] }}"
                         style="background-color: {{ $color['color'] }};">
-                        <input type="checkbox" value="{{ $color['name'] }}" id="color{{ $color['id'] }}"
+                        <input type="radio" value="{{ $color['name'] }}" id="color{{ $color['id'] }}"
                             name="color_check[]" class="checkbox_input" hidden>
                     </li>
                 @endforeach

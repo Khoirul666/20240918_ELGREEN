@@ -80,34 +80,35 @@
                             </div>
                             <div>
                                 @foreach(json_decode($produk->color) as $color)
-                                <input type="radio" name="c_pick" value="{{App\Models\Color::find($color)->id}}" require>
+                                <input type="radio" id="color_{{App\Models\Color::find($color)->id}}" name="c_pick" value="{{App\Models\Color::find($color)->id}}" require>
+                                <label for="color_{{App\Models\Color::find($color)->id}}">{{App\Models\Color::find($color)->show}}</label>
                                 @endforeach
                             </div>
                             <div>
                                 <label class="form-label" for="qty">Quantity</label>
                             </div>
                             <div>
-                                <input name="qty" id="qty" class="form-input" type="number" pattern="0-9"
+                                <input name="qty" id="qty" class="form-control" type="number" pattern="0-9"
                                     max="999" min="1" value="1">
                             </div>
                             @if (Auth()->check())
-                            <div>
-                                <button class="btn add_to_cart" name="add" type="submit">Add to Cart</button>
+                            <div class="mt-3">
+                                <button class="add_to_cart form-control" name="add" type="submit">Add to Cart</button>
                             </div>
-                            <div>
-                                <button class="btn buy_now" name="buy" type="submit">Buy Now</button>
+                            <div class="my-3">
+                                <button class="buy_now form-control" name="buy" type="submit">Buy Now</button>
                             </div>
                             @else
-                            <div>
-                                <a href="{{ route('login') }}" class="btn add_to_cart">Add to Cart</a>
+                            <div class="mt-3">
+                                <button href="{{ route('login') }}" class="add_to_cart form-control">Add to Cart</button>
                             </div>
-                            <div>
-                                <a href="{{ route('login') }}" class="btn buy_now">Buy Now</a>
+                            <div class="mt-3">
+                                <button href="{{ route('login') }}" class="buy_now form-control">Buy Now</button>
                             </div>
                             @endif
                         </form>
                     </div>
-                    <div>
+                    <div class="mt-4">
                         <h4 data-bs-toggle="collapse" href="#product_info" aria-expanded="false"
                             aria-controls="product_info">
                             Product Info
