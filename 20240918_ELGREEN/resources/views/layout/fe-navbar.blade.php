@@ -121,6 +121,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
+        @if(Auth()->check())
         @foreach(App\Models\Cart::where('id_user',Auth()->user()->id)->get() as $value)
         <div class="d-flex">
             <div class="p-2">
@@ -137,5 +138,6 @@
             </div>
         </div>
         @endforeach
+        @endif
     </div>
 </div>
